@@ -3,14 +3,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 6rem 2rem;
-  min-height: 100vh;
-}
-
-@media screen and (max-width: 786px) {
-  .main {
-    padding: 2rem 2rem;
-  }
+  padding: 2rem;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .center {
@@ -35,6 +30,7 @@
 
 .footer {
   color: #bbb;
+  font-family: var(--lexend-font);
   font-size: 0.9em;
   text-align: center;
 }
