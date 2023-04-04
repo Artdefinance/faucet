@@ -1,0 +1,21 @@
+.button {
+  width: 240px;
+  height: 70px;
+  margin: 20px auto;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 100px;
+  background: linear-gradient(109.69deg, #6c54f3 36.82%, #9482ff 92.64%);
+  color: #fff;
+  cursor: pointer;
+  font-family: var(--lexend-font);
+  font-size: 1rem;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.button:disabled {
+  background: rgba(187, 187, 187, 0.4);
+  color: #bbb;
+  cursor: auto;
+}
