@@ -1,7 +1,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 6rem 2rem;
   min-height: 100vh;
@@ -19,7 +19,6 @@
   align-items: center;
   flex-direction: column;
   position: relative;
-  padding: 4rem 0;
 }
 
 .center h1 {
