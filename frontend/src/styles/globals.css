@@ -13,15 +13,62 @@ body {
 }
 
 body {
-  background: #000;
+  background : url("../../public/assets/images/background.png");
+  background-size: cover;
 }
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
+button {
+  background-color: transparent;
+  border: none;
+}
+
+@media (prefers-color-scheme: white) {
   html {
-    color-scheme: dark;
+    color-scheme: white;
   }
+}
+
+.sns-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.sns-icon__insta:hover path {
+  fill: url(#gradient);
+  transition: 0.2s;
+}
+
+.sns-icon__discord:hover path {
+  fill: #5865f2;
+  transition: 0.2s;
+}
+
+.sns-icon__twitter:hover path {
+  fill: #1da1f2;
+  transition: 0.2s;
+}
+
+.sns-icon__medium:hover path {
+  fill: black;
+  transition: 0.2s;
+}
+
+.sns-icon__telegram:hover path {
+  fill: #4ca7e9;
+  transition: 0.2s;
+}
+
+.sns-icon__youtube:hover path {
+  fill: #ff0302;
+  transition: 0.2s;
+}
+
+.sns-icon__gitbook:hover path {
+  fill: #4285FD;
+  transition: 0.2s;
 }

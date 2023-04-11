@@ -1,20 +1,22 @@
 .inputDiv {
   width: 100%;
   margin: 20px 0;
+  position: relative;
 }
 
 .input {
   width: 100%;
-  font-size: 1rem;
+  font-size: 28px;
+  font-weight: 300;
   height: 50px;
+  background-color: transparent;
   box-sizing: border-box;
-  border-radius: 10px;
-  border: 1px solid #888;
+  border: none;
+  border-bottom: 1px solid rgba(221, 221, 221, 1);
   z-index: 1;
-  padding: 0 10px;
+  padding: 0 20px 0 60px;
   font-family: var(--lexend-font);
-  background-color: #000;
-  color: #fff;
+  color: rgba(0, 0, 0, 1);
   margin-bottom: 4px;
 }
 
@@ -22,7 +24,8 @@
 .input:active {
   text-decoration: none;
   outline: none;
-  border: 2px solid #6c54f3;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 1);
 }
 
 .required {
@@ -30,4 +33,10 @@
   font-family: var(--lexend-font);
   font-size: 0.8rem;
   padding-left: 4px;
+}
+
+.inputDiv > img {
+  position: absolute;
+  left: 5px;
+  top: 11px;
 }
