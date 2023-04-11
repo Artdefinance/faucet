@@ -104,7 +104,10 @@ const Home = () => {
       </header>
       <main className={styles.main}>
         <div className={`${styles.center} ${lexend.variable}`}>
-          <h1>Testnet Faucet!</h1>
+          <h1>
+            Testnet
+            <br /> Faucet!
+          </h1>
           <p>Enter your wallet address to receive the payment</p>
           <div className={styles.container}>
             <Input

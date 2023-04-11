@@ -20,6 +20,12 @@
   margin-bottom: 4px;
 }
 
+@media (max-width: 1080px) {
+  .input {
+    font-size: 18px;
+  }
+}
+
 .input:focus,
 .input:active {
   text-decoration: none;
