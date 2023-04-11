@@ -226,3 +226,25 @@ button {
   fill: #4285FD;
   transition: 0.2s;
 }
+
+.title-web {
+  display: block;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 1080px) {
+  .title-web {
+    display: none;
+  }
+}
+
+.title-mobile {
+  display: block;
+  margin-bottom: 15px;
+}
+
+@media (min-width: 1081px) {
+  .title-mobile {
+    display: none;
+  }
+}

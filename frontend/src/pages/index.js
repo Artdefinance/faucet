@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useRef } from "react";
 import Head from "next/head";
+import Image from "next/image";
 import { Lexend } from "next/font/google";
 import { ethers } from "ethers";
 import { ToastContainer, toast, Zoom } from "react-toastify";
@@ -10,6 +11,8 @@ import Input from "@/components/Input/Input";
 import Button from "@/components/Button/Button";
 import Logo from "@/components/Logo/Logo";
 import SnsButtons from "@/components/SNS-buttons/sns-buttons";
+import TitleWeb from "@/assets/title/title-web";
+import TitleMobile from "@/assets/title/title-mobile";
 
 const lexend = Lexend({
   subsets: ["latin"],
@@ -104,10 +107,8 @@ const Home = () => {
       </header>
       <main className={styles.main}>
         <div className={`${styles.center} ${lexend.variable}`}>
-          <h1>
-            Testnet
-            <br /> Faucet!
-          </h1>
+          <TitleWeb />
+          <TitleMobile />
           <p>Enter your wallet address to receive the payment</p>
           <div className={styles.container}>
             <Input
