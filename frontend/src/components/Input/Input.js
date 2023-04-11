@@ -1,4 +1,5 @@
 import styles from "@/components/Input/Input.module.css";
+import Image from "next/image";
 
 const Input = (props) => {
   const { value, onChange, onBlur, placeholder, error } = props;
@@ -13,6 +14,12 @@ const Input = (props) => {
         placeholder={placeholder}
       />
       {error ? <div className={styles.required}>Required</div> : <></>}
+      <Image
+        src="assets/icons/wallet.svg"
+        alt="wallet-icon"
+        width={30}
+        height={30}
+      />
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useRef } from "react";
 import Head from "next/head";
+import Image from "next/image";
 import { Lexend } from "next/font/google";
 import { ethers } from "ethers";
 import { ToastContainer, toast, Zoom } from "react-toastify";
@@ -8,6 +9,10 @@ import ReCAPTCHA from "react-google-recaptcha";
 import styles from "@/styles/Home.module.css";
 import Input from "@/components/Input/Input";
 import Button from "@/components/Button/Button";
+import Logo from "@/components/Logo/Logo";
+import SnsButtons from "@/components/SNS-buttons/sns-buttons";
+import TitleWeb from "@/assets/title/title-web";
+import TitleMobile from "@/assets/title/title-mobile";
 
 const lexend = Lexend({
   subsets: ["latin"],
@@ -97,27 +102,34 @@ const Home = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <header className={styles.header}>
+        <Logo />
+      </header>
       <main className={styles.main}>
         <div className={`${styles.center} ${lexend.variable}`}>
-          <h1>ADF Testnet Faucet</h1>
+          <TitleWeb />
+          <TitleMobile />
+          <p>Enter your wallet address to receive the payment</p>
+          <div className={styles.container}>
+            <Input
+              value={address}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              error={(!address || !isAddressValidate) && touched}
+              placeholder="ADF Testnet address"
+            />
+            <Button
+              disabled={!address || !isAddressValidate || !recaptcha || loading}
+              onClick={handleSubmit}
+            >
+              Send me Tokens
+            </Button>
+          </div>
           <ReCAPTCHA
             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITEKEY}
             onChange={handleRecaptchaChange}
             ref={recaptchaRef}
           />
-          <Input
-            value={address}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            error={(!address || !isAddressValidate) && touched}
-            placeholder="Enter your address"
-          />
-          <Button
-            disabled={!address || !isAddressValidate || !recaptcha || loading}
-            onClick={handleSubmit}
-          >
-            Send me tokens !
-          </Button>
           <ToastContainer
             position="top-right"
             autoClose={3000}
@@ -129,11 +141,13 @@ const Home = () => {
             pauseOnHover
             theme="dark"
           />
-          <div className={styles.footer}>
-            © 2023 <b>Art de Finance</b>
-          </div>
         </div>
       </main>
+      <footer className={styles.footer}>
+        <div className={styles.blank}></div>
+        <p>© 2023 Art de Finance. All Rights Reserved</p>
+        <SnsButtons />
+      </footer>
     </>
   );
 };
