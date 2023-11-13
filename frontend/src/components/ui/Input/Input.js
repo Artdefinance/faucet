@@ -1,4 +1,4 @@
-import styles from "@/components/Input/Input.module.css";
+import styles from "./Input.module.css";
 import Image from "next/image";
 
 const Input = (props) => {
