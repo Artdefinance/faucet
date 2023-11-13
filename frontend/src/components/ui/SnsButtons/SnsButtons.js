@@ -1,12 +1,12 @@
 import React from "react";
-import Discord from "@/assets/SNS-icon/Discord";
-import Gitbook from "@/assets/SNS-icon/Gitbook";
-import Insta from "@/assets/SNS-icon/Insta";
-import Medium from "@/assets/SNS-icon/Medium";
-import Telegram from "@/assets/SNS-icon/Telegram";
-import Twitter from "@/assets/SNS-icon/Twitter";
-import Youtube from "@/assets/SNS-icon/Youtube";
-import styles from "@/components/SNS-buttons/sns-buttons.module.css";
+import Discord from "@/assets/sns-icons/Discord";
+import Gitbook from "@/assets/sns-icons/Gitbook";
+import Insta from "@/assets/sns-icons/Insta";
+import Medium from "@/assets/sns-icons/Medium";
+import Telegram from "@/assets/sns-icons/Telegram";
+import Twitter from "@/assets/sns-icons/Twitter";
+import Youtube from "@/assets/sns-icons/Youtube";
+import styles from "./SnsButtons.module.css";
 
 function SnsButtons() {
   return (
