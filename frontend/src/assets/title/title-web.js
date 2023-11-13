@@ -22,9 +22,9 @@ const TitleWeb = () => {
           width="807.481"
           height="94.1799"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -76,8 +76,8 @@ const TitleWeb = () => {
           y2="277.615"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#6C54F3" />
-          <stop offset="1" stop-color="#9B89FF" />
+          <stop stopColor="#6C54F3" />
+          <stop offset="1" stopColor="#9B89FF" />
         </linearGradient>
       </defs>
     </svg>

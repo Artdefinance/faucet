@@ -21,11 +21,11 @@ const Insta = () => {
           y2="35.4366"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.0343084" stop-color="#334FFF" />
-          <stop offset="0.270833" stop-color="#C838F7" />
-          <stop offset="0.510417" stop-color="#FF1F7A" />
-          <stop offset="0.744792" stop-color="#FF8534" />
-          <stop offset="1" stop-color="#FFBD28" />
+          <stop offset="0.0343084" stopColor="#334FFF" />
+          <stop offset="0.270833" stopColor="#C838F7" />
+          <stop offset="0.510417" stopColor="#FF1F7A" />
+          <stop offset="0.744792" stopColor="#FF8534" />
+          <stop offset="1" stopColor="#FFBD28" />
         </linearGradient>
       </defs>
     </svg>
