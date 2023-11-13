@@ -183,6 +183,11 @@ button {
   height: 30px;
 }
 
+.sns-icon__twitter {
+  width: 22px;
+  height: 22px;
+}
+
 @media (max-width: 1080px) {
   .logo {
     width: 70px;
@@ -203,7 +208,7 @@ button {
 }
 
 .sns-icon__twitter:hover path {
-  fill: #1da1f2;
+  fill: black;
   transition: 0.2s;
 }
 

@@ -1,18 +1,19 @@
 import React, { useState, useMemo, useRef } from "react";
+import styles from "@/styles/Home.module.css";
 import Head from "next/head";
 import Image from "next/image";
 import { Lexend } from "next/font/google";
+
+import axios from "axios";
 import { ethers } from "ethers";
 import { ToastContainer, toast, Zoom } from "react-toastify";
-import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
-import styles from "@/styles/Home.module.css";
+
 import Input from "@/components/ui/input/Input";
 import Button from "@/components/ui/button/Button";
 import Logo from "@/assets/logo/Logo";
 import SnsButtons from "@/components/ui/sns-buttons/SnsButtons";
-import TitleWeb from "@/assets/title/TitleWeb";
-import TitleMobile from "@/assets/title/TitleMobile";
+import Title from "@/components/layout/title/Title";
 
 const lexend = Lexend({
   subsets: ["latin"],
@@ -106,31 +107,35 @@ const Home = () => {
         <Logo />
       </header>
       <main className={styles.main}>
-        <div className={`${styles.center} ${lexend.variable}`}>
-          <TitleWeb />
-          <TitleMobile />
-          <p>Enter your wallet address to receive the payment</p>
-          <div className={styles.container}>
-            <Input
-              value={address}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              error={(!address || !isAddressValidate) && touched}
-              placeholder="ADF Testnet address"
-            />
-            <Button
-              disabled={!address || !isAddressValidate || !recaptcha || loading}
-              onClick={handleSubmit}
-            >
-              Send me Tokens
-            </Button>
-          </div>
-          <ReCAPTCHA
-            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITEKEY}
-            onChange={handleRecaptchaChange}
-            ref={recaptchaRef}
-            hl="en"
-          />
+        <div className={styles.wrapper}>
+          <Title />
+          <section className={styles.section}>
+            <div className={styles.inputWrapper}>
+              <Input
+                value={address}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={(!address || !isAddressValidate) && touched}
+                placeholder="Mumbai ADF Testnet address"
+              />
+              <Button
+                disabled={
+                  !address || !isAddressValidate || !recaptcha || loading
+                }
+                onClick={handleSubmit}
+              >
+                Send me Tokens
+              </Button>
+            </div>
+            <div className={styles.recaptcha}>
+              <ReCAPTCHA
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITEKEY}
+                onChange={handleRecaptchaChange}
+                ref={recaptchaRef}
+                hl="en"
+              />
+            </div>
+          </section>
           <ToastContainer
             position="top-right"
             autoClose={3000}
