@@ -7,10 +7,10 @@ import { ToastContainer, toast, Zoom } from "react-toastify";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 import styles from "@/styles/Home.module.css";
-import Input from "@/components/ui/Input/Input";
-import Button from "@/components/ui/Button/Button";
+import Input from "@/components/ui/input/Input";
+import Button from "@/components/ui/button/Button";
 import Logo from "@/assets/logo/Logo";
-import SnsButtons from "@/components/ui/SnsButtons/SnsButtons";
+import SnsButtons from "@/components/ui/sns-buttons/SnsButtons";
 import TitleWeb from "@/assets/title/TitleWeb";
 import TitleMobile from "@/assets/title/TitleMobile";
 
