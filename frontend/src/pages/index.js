@@ -129,6 +129,7 @@ const Home = () => {
             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITEKEY}
             onChange={handleRecaptchaChange}
             ref={recaptchaRef}
+            hl="en"
           />
           <ToastContainer
             position="top-right"
