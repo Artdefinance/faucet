@@ -145,13 +145,14 @@ const Home = () => {
           <ToastContainer
             position="top-center"
             autoClose={3000}
-            hideProgressBar={false}
+            hideProgressBar={true}
             newestOnTop={false}
             closeOnClick
             pauseOnFocusLoss
             draggable
             pauseOnHover
             theme="dark"
+            closeButton={false}
           />
         </div>
       </main>
