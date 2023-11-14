@@ -82,6 +82,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .footer {
+    margin-top: unset;
+  }
+}
+
 .loader {
   width: 26px;
   height: 26px;

@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import axios from "axios";
 import { ethers } from "ethers";
-import { ToastContainer, toast, Zoom } from "react-toastify";
+import { ToastContainer, toast, Bounce } from "react-toastify";
 import ReCAPTCHA from "react-google-recaptcha";
 
 import Input from "@/components/ui/input/Input";
@@ -13,6 +13,10 @@ import Button from "@/components/ui/button/Button";
 import Logo from "@/assets/logo/Logo";
 import SnsButtons from "@/components/ui/sns-buttons/SnsButtons";
 import Title from "@/components/layout/title/Title";
+import ToastSuccess from "@/components/icons/ToastSuccess";
+import ToastError from "@/components/icons/ToastError";
+
+const ToastAnimation = Bounce;
 
 const Home = () => {
   const [address, setAddress] = useState("");
@@ -58,20 +62,28 @@ const Home = () => {
       .then((response) => {
         const { result } = response.data;
         if (result) {
-          toast.success(`Faucet success`, { transiiton: Zoom });
+          toast.success(`Faucet success`, {
+            transiiton: ToastAnimation,
+            icon: <ToastSuccess />,
+          });
           setIsSuccess(true);
         }
         if (!result) {
           toast.error(`You have already received payment to that address`, {
-            transition: Zoom,
+            transition: ToastAnimation,
+            icon: <ToastError />,
           });
         }
         reset();
         setLoading(false);
       })
       .catch((err) => {
-        toast.error(`${err.response.data.message}`, { transition: Zoom });
+        toast.error(`${err.response.data.message}`, {
+          transition: ToastAnimation,
+          icon: <ToastError />,
+        });
         setLoading(false);
+        reset();
       });
   };
 
@@ -131,7 +143,7 @@ const Home = () => {
             )}
           </section>
           <ToastContainer
-            position="top-right"
+            position="top-center"
             autoClose={3000}
             hideProgressBar={false}
             newestOnTop={false}
