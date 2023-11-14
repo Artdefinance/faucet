@@ -1,6 +1,6 @@
 .box {
   display: flex;
-  gap: 26px;
+  gap: 30px;
 }
 
 @media (max-width: 1080px) {

@@ -22,66 +22,35 @@
   position: relative;
 }
 
-.center {
+.wrapper {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
   flex-direction: column;
-  position: relative;
-  max-width: 1230px;
-  min-height: 800px;
+  gap: 60px;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
   width: 100%;
 }
 
-.center h1 {
-  font-weight: bold;
-  font-size: 110px;
-  z-index: 1;
-  margin-bottom: 30px;
-  background-image: linear-gradient(92.41deg, #6C54F3 4.41%, #9B89FF 98.38%);
-  letter-spacing: -0.02em;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.section {
+  width: 100%;
 }
 
-.center > h1 > br {
-  display: none;
-}
-
-@media (max-width:1080px) {
-  .center h1 {
-    font-size: 58px;
-  }
-
-  .center > h1 > br {
-    display: block;
-  }
-}
-
-.center > p {
-  font-size: 18px;
-  color: rgba(85, 85, 85, 1);
-  margin-bottom: 80px;
-}
-
-@media (max-width: 1080px) {
-  .center > p {
-    font-size: 15px;
-  }
-}
-
-.container {
+.inputWrapper {
   display: flex;
   width: 100%;
   gap: 36px;
 }
 
 @media (max-width: 1080px) {
-  .container {
+  .inputWrapper {
     flex-direction: column;
     gap: 0px;
   }
+}
+
+.recaptcha {
+  align-self: flex-start;
 }
 
 .footer {
@@ -111,4 +80,57 @@
     margin-top: 120px;
     font-size: 14px;
   }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    margin-top: unset;
+  }
+}
+
+.loader {
+  width: 26px;
+  height: 26px;
+  border: 4px solid #AAAAAA;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.seeding {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.seeding a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 540px;
+  height: 60px;
+  border: 1px solid black;
+  border-radius: 100px;
+  color: #1B1E24;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.36px;
+  transition: background-color 300ms;
+}
+
+.seeding a:hover {
+  background-color: #e5f8f7;
 }

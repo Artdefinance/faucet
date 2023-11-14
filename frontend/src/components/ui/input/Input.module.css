@@ -5,6 +5,7 @@
 }
 
 .input {
+  max-width: 950px;
   width: 100%;
   font-size: 28px;
   font-weight: 300;
@@ -31,6 +32,13 @@
   }
 }
 
+@media (max-width: 768px) {
+  .input {
+    font-size: 16px;
+    padding: 0 10px 0 50px;
+  }
+}
+
 .input:focus,
 .input:active {
   text-decoration: none;
@@ -46,8 +54,8 @@
   padding-left: 4px;
 }
 
-.inputDiv > img {
+.inputDiv > svg {
   position: absolute;
   left: 5px;
-  top: 11px;
+  top: 6px;
 }

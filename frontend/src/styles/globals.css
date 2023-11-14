@@ -183,6 +183,11 @@ button {
   height: 30px;
 }
 
+.sns-icon__twitter {
+  width: 22px;
+  height: 22px;
+}
+
 @media (max-width: 1080px) {
   .logo {
     width: 70px;
@@ -203,7 +208,7 @@ button {
 }
 
 .sns-icon__twitter:hover path {
-  fill: #1da1f2;
+  fill: black;
   transition: 0.2s;
 }
 
@@ -247,4 +252,41 @@ button {
   .title-mobile {
     display: none;
   }
+}
+
+/* React-Toastify */
+.Toastify__toast-container {
+  width: unset;
+}
+@media (max-width: 768px) {
+  .Toastify__toast-container {
+    padding: 20px;
+    width: 100%;
+  }
+}
+.Toastify__toast-container--top-center {
+  top: 4em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.Toastify__toast {
+  border-radius: 100px;
+  border: 1px solid rgba(177, 185, 193, 0.60);
+  background: radial-gradient(149.14% 139.71% at 7.35% 8.24%, rgba(223, 230, 240, 0.80) 0%, rgba(68, 85, 109, 0.00) 100%);
+  backdrop-filter: blur(5px);
+  color: #1B1E24;
+  font-family: SUIT;
+  font-weight: 600;
+  padding: 16px 24px;
+}
+.Toastify__toast-body {
+  gap: 10px;
+}
+.Toastify__toast-icon {
+  margin: 0;
+  width: 24px;
+  height: 24px;
+}
+.Toastify__progress-bar, .Toastify__close-button {
+  visibility: hidden;
 }
