@@ -1,8 +1,7 @@
 import React, { useState, useMemo, useRef } from "react";
 import styles from "@/styles/Home.module.css";
 import Head from "next/head";
-import Image from "next/image";
-import { Lexend } from "next/font/google";
+import Link from "next/link";
 
 import axios from "axios";
 import { ethers } from "ethers";
@@ -15,16 +14,12 @@ import Logo from "@/assets/logo/Logo";
 import SnsButtons from "@/components/ui/sns-buttons/SnsButtons";
 import Title from "@/components/layout/title/Title";
 
-const lexend = Lexend({
-  subsets: ["latin"],
-  variable: "--lexend-font",
-});
-
 const Home = () => {
   const [address, setAddress] = useState("");
   const [touched, setTouched] = useState(false);
   const [loading, setLoading] = useState(false);
   const [recaptcha, setRecaptcha] = useState(null);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const recaptchaRef = useRef(undefined);
 
@@ -56,41 +51,26 @@ const Home = () => {
     setLoading(true);
 
     axios
-      .post(`${process.env.NEXT_PUBLIC_BACKEND_ENDPOINT}/faucets`, {
+      .post(`${process.env.NEXT_PUBLIC_BACKEND_ENDPOINT}/sendToken`, {
         address,
-        captchaResponse: recaptcha,
+        recaptchaResponse: recaptcha,
       })
       .then((response) => {
-        console.log(`tx Hash : ${JSON.stringify(response.data)}`);
-        toast.success(`Faucet Success`, { transition: Zoom });
+        const { result } = response.data;
+        if (result) {
+          toast.success(`Faucet success`, { transiiton: Zoom });
+          setIsSuccess(true);
+        }
+        if (!result) {
+          toast.error(`You have already received payment to that address`, {
+            transition: Zoom,
+          });
+        }
         reset();
         setLoading(false);
       })
       .catch((err) => {
-        let errText = "Faucet Fail";
-        if (typeof err.response == "undefined" || err.response == null) {
-          errText = "Unknown status";
-        } else {
-          switch (err.response.status) {
-            case 400:
-              errText = "Invalid request";
-              break;
-            case 403:
-              errText = "Too many requests";
-              break;
-            case 404:
-              errText = "Cannot connect to server";
-              break;
-            case 502:
-            case 503:
-              errText = "Faucet service temporary unavailable";
-              break;
-            default:
-              errText = err.response.data || err.message;
-              break;
-          }
-        }
-        toast.error(`${errText}`, { transition: Zoom });
+        toast.error(`${err.response.data.message}`, { transition: Zoom });
         setLoading(false);
       });
   };
@@ -98,8 +78,8 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>ADF Testnet Faucet</title>
-        <meta name="description" content="ADF Testnet Faucet" />
+        <title>Artiside Seeding Testnet Faucet</title>
+        <meta name="description" content="Artiside Seeding Testnet Faucet" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -108,33 +88,47 @@ const Home = () => {
       </header>
       <main className={styles.main}>
         <div className={styles.wrapper}>
-          <Title />
+          <Title isSuccess={isSuccess} />
           <section className={styles.section}>
-            <div className={styles.inputWrapper}>
-              <Input
-                value={address}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                error={(!address || !isAddressValidate) && touched}
-                placeholder="Mumbai ADF Testnet address"
-              />
-              <Button
-                disabled={
-                  !address || !isAddressValidate || !recaptcha || loading
-                }
-                onClick={handleSubmit}
-              >
-                Send me Tokens
-              </Button>
-            </div>
-            <div className={styles.recaptcha}>
-              <ReCAPTCHA
-                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITEKEY}
-                onChange={handleRecaptchaChange}
-                ref={recaptchaRef}
-                hl="en"
-              />
-            </div>
+            {!isSuccess ? (
+              <div className={styles.inputWrapper}>
+                <Input
+                  value={address}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  error={(!address || !isAddressValidate) && touched}
+                  placeholder="Mumbai ADF Testnet address"
+                />
+                <Button
+                  disabled={
+                    !address || !isAddressValidate || !recaptcha || loading
+                  }
+                  onClick={handleSubmit}
+                >
+                  Send me Tokens
+                  {loading && <span className={styles.loader}></span>}
+                </Button>
+              </div>
+            ) : (
+              <div className={styles.seeding}>
+                <Link
+                  href="https://artiside.testnet.artdefinance.io/seeding"
+                  target="_blank"
+                >
+                  Go to Seeding &nbsp;{">"}
+                </Link>
+              </div>
+            )}
+            {!isSuccess && (
+              <div className={styles.recaptcha}>
+                <ReCAPTCHA
+                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITEKEY}
+                  onChange={handleRecaptchaChange}
+                  ref={recaptchaRef}
+                  hl="en"
+                />
+              </div>
+            )}
           </section>
           <ToastContainer
             position="top-right"

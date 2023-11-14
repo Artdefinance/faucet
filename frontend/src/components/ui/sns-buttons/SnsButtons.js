@@ -14,7 +14,7 @@ function SnsButtons() {
         <Link
           target="_blank"
           rel="noreferrer"
-          href="https://www.instagram.com/art_de_finance/"
+          href="https://www.instagram.com/artiside_global/"
         >
           <Insta />
         </Link>

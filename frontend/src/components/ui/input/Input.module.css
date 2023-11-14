@@ -32,6 +32,13 @@
   }
 }
 
+@media (max-width: 768px) {
+  .input {
+    font-size: 16px;
+    padding: 0 10px 0 50px;
+  }
+}
+
 .input:focus,
 .input:active {
   text-decoration: none;
