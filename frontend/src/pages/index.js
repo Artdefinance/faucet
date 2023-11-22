@@ -109,7 +109,7 @@ const Home = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   error={(!address || !isAddressValidate) && touched}
-                  placeholder="Mumbai ADF Testnet address"
+                  placeholder="Enter your wallet address to receive the payment"
                 />
                 <Button
                   disabled={

@@ -6,11 +6,22 @@
   gap: 26px;
 }
 .text {
-  color: #7D8287;
+  color: #7d8287;
+  font-family: SUIT;
   font-size: 18px;
   font-weight: 500;
   letter-spacing: -0.18px;
   text-align: center;
+}
+
+.text a {
+  font-family: SUIT;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.18px;
+  text-align: center;
+  color: #00b5b0;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
