@@ -28,6 +28,9 @@
   .text {
     font-size: 14px;
   }
+  .text a {
+    font-size: 14px;
+  }
   .wrapper > svg {
     width: 108%;
     height: 100%;
