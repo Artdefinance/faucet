@@ -100,7 +100,7 @@ const Home = () => {
       </header>
       <main className={styles.main}>
         <div className={styles.wrapper}>
-          <Title isSuccess={isSuccess} />
+          <Title />
           <section className={styles.section}>
             {!isSuccess ? (
               <div className={styles.inputWrapper}>
