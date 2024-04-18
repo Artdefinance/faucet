@@ -40,7 +40,7 @@ const Home = () => {
     return isAddress(address);
   }, [address]);
 
-  const reset = () => {
+  const handleReset = () => {
     setAddress("");
     setTouched(false);
     setRecaptcha(null);
@@ -74,7 +74,7 @@ const Home = () => {
             icon: <ToastError />,
           });
         }
-        reset();
+        handleReset();
         setLoading(false);
       })
       .catch((err) => {
@@ -83,7 +83,7 @@ const Home = () => {
           icon: <ToastError />,
         });
         setLoading(false);
-        reset();
+        handleReset();
       });
   };
 
@@ -109,7 +109,7 @@ const Home = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   error={(!address || !isAddressValidate) && touched}
-                  placeholder="Enter your wallet address to receive the payment"
+                  placeholder="Amoy ADF Testnet address"
                 />
                 <Button
                   disabled={
@@ -124,10 +124,10 @@ const Home = () => {
             ) : (
               <div className={styles.seeding}>
                 <Link
-                  href="https://artiside.testnet.artdefinance.io/seeding"
+                  href="https://artiside.testnet.artdefinance.io/launchpad"
                   target="_blank"
                 >
-                  Go to Seeding &nbsp;{">"}
+                  Go to Launchpad &nbsp;{">"}
                 </Link>
               </div>
             )}
@@ -157,7 +157,7 @@ const Home = () => {
       </main>
       <footer className={styles.footer}>
         <div className={styles.blank}></div>
-        <p>© 2023 Art de Finance. All Rights Reserved</p>
+        <p>© 2024 Art de Finance. All Rights Reserved</p>
         <SnsButtons />
       </footer>
     </>

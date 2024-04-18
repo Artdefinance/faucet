@@ -7,12 +7,12 @@ const Title = () => (
   <div className={styles.wrapper}>
     <TitleWeb />
     <p className={styles.text}>
-      Mumbai Seeding Test Token Address:{" "}
+      Amoy Seeding Test Token Address:{" "}
       <Link
-        href="https://mumbai.polygonscan.com/address/0xbD98E53C3a54F329eF362916f337c2ddDb883ECd"
+        href="https://amoy.polygonscan.com/address/0xC4Af1A414d115882CE5E270C2a42888AeF5d75D5"
         target="_blank"
       >
-        0xbD98E53C3a54F329eF362916f337c2ddDb883ECd
+        0xC4Af1A414d115882CE5E270C2a42888AeF5d75D5
       </Link>
     </p>
   </div>
