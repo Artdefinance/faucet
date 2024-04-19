@@ -58,7 +58,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-family: 'Rota';
+  font-family: "Rota";
   font-size: 16px;
   text-align: center;
   width: 100%;
@@ -91,31 +91,31 @@
 .loader {
   width: 26px;
   height: 26px;
-  border: 4px solid #AAAAAA;
+  border: 4px solid #aaaaaa;
   border-bottom-color: transparent;
   border-radius: 50%;
   display: inline-block;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
-  }
+}
 
-  @keyframes rotation {
+@keyframes rotation {
   0% {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
-.seeding {
+.launchpad {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 30px;
 }
 
-.seeding a {
+.launchpad a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -124,13 +124,13 @@
   height: 60px;
   border: 1px solid black;
   border-radius: 100px;
-  color: #1B1E24;
+  color: #1b1e24;
   font-size: 18px;
   font-weight: 700;
   letter-spacing: -0.36px;
   transition: background-color 300ms;
 }
 
-.seeding a:hover {
+.launchpad a:hover {
   background-color: #e5f8f7;
 }

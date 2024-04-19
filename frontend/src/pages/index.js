@@ -90,8 +90,8 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Artiside Seeding Testnet Faucet</title>
-        <meta name="description" content="Artiside Seeding Testnet Faucet" />
+        <title>Artiside Launchpad Testnet Faucet</title>
+        <meta name="description" content="Artiside Launchpad Testnet Faucet" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -122,7 +122,7 @@ const Home = () => {
                 </Button>
               </div>
             ) : (
-              <div className={styles.seeding}>
+              <div className={styles.launchpad}>
                 <Link
                   href="https://artiside.testnet.artdefinance.io/launchpad"
                   target="_blank"
