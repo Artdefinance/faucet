@@ -7,7 +7,7 @@ const Title = () => (
   <div className={styles.wrapper}>
     <TitleWeb />
     <p className={styles.text}>
-      Amoy Seeding Test Token Address:{" "}
+      Amoy Launchpad Test Token Address:{" "}
       <Link
         href="https://amoy.polygonscan.com/address/0xC4Af1A414d115882CE5E270C2a42888AeF5d75D5"
         target="_blank"
@@ -15,6 +15,13 @@ const Title = () => (
         0xC4Af1A414d115882CE5E270C2a42888AeF5d75D5
       </Link>
     </p>
+    <Link
+      className={styles.amoyFaucet}
+      href="https://faucet.polygon.technology/"
+      target="_blank"
+    >
+      Polygon PoS (Amoy) MATIC Faucet
+    </Link>
   </div>
 );
 
